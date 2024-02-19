@@ -1,23 +1,66 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+.tablink {
+    background-color: #555;
+    color: rgb(4, 253, 199);
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tablink:hover {
+    background-color: #777;
+  }
+  
+  /* Set default styles for tab content */
+  .tabcontent {
+    color: rgb(4, 253, 199);
+    display: none;
+    padding: 50px;
     text-align: center;
-}
-.container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-.column {
-    flex: 1;
-    margin: 0 10px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-}
+  }
+  #home {background-color:rgb(243, 140, 140);}
+  #about us {background-color:rgb(156, 247, 156);}
+  #contact us{background-color:rgb(161, 161, 252);}
+
+
+
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+  }
+  
+  /* Style tab links */
+  .tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+  }
+  
+  .tablink:hover {
+    background-color: #777;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+  
+  #Home {background-color: red;}
+  #News {background-color: green;}
+  #Contact {background-color: blue;}
+  #About {background-color: orange;}
+    

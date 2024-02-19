@@ -1,28 +1,82 @@
 <!DOCTYPE html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <b>Project management</b>
     {% include 'bootstrap.html' %}
+
+    <title>Front Page</title>
+    <style>
+        /* CSS styles */
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image:url('logo.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        header {
+            background-color: #67f7df;
+            color: #039b5c;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            
+            padding: 5px;
+        }
+        .column {
+            flex: 1;
+            margin: 0 10px;
+            background-color: #039b5c;
+            padding: 5px;
+            border-radius: 5px;
+            font:italic;
+        }
+        .button {
+  border: none;
+  color: rgb(110, 248, 195);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+        
+    </style>
 </head>
 
-<body>
+<body background image ="C:\Users\DELL\My project (4)\Project-management-system-DBMS\static\logo.jpg">
+   
     <header>
-        <h1>Welcome to Our Website</h1>
+        <h1>Welcome to manage project</h1>
     </header>
     
-    <div class="container">
+   
         <div class="column">
-            <h2>Column 1</h2>
-            <p>This is the content of column 1.</p>
+            <h2>collabrate with partners</h2>
+            <h3>our website is collabrative</h3>
         </div>
         <div class="column">
-            <h2>Column 2</h2>
-            <p>This is the content of column 2.</p>
-        </div>
-        <div class="column">
-            <h2>Column 3</h2>
-            <p>This is the content of column 3.</p>
+            <h2>start a new project</h2>
+            <h3>create and maintain projects</h3>
         </div>
     </div>
+    <div class="container">
+        <div class="column">
+            <div class="button">
+         <h2><button type="button">sign in or login</button>t </h2>
+            <h3>This helps maintin all your works</h3>
+        </div>
+    </div>
+    </div>
     
-  
 </body>
+</html>
