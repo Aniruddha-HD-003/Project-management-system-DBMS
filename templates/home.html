@@ -13,33 +13,37 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image:url('logo.jpg'); 
+            background-color: antiquewhite; 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
         header {
-            background-color: #67f7df;
-            color: #039b5c;
+            background-color: #460035;
+            color: #e5f7d6;
             padding: 10px 0;
             text-align: center;
         }
         .container {
             display: flex;
+            justify-content: center; /* Center the columns horizontally */
+    align-items: center;
             
             padding: 5px;
         }
         .column {
             flex: 1;
             margin: 0 10px;
-            background-color: #039b5c;
+            background-color: #e5f7d6;
             padding: 5px;
             border-radius: 5px;
+            justify-content: center; /* Center the columns horizontally */
+    align-items: center;
             font:italic;
         }
         .button {
   border: none;
-  color: rgb(110, 248, 195);
+  color: rgb(228, 245, 213);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -48,22 +52,169 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+   /* CSS for flip animation */
+.flip {
+    position: relative;
+    overflow: hidden;
+    color: #1c3eef;
+    display: block;
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
 
-        
+.flip span {
+    opacity: 0;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    transform: rotateX(90deg); /* Initially flip the span */
+    animation: flipAnimation 5s infinite; /* Apply flip animation */
+}
+
+.flip span.is-visible {
+    opacity: 1;
+    transform: rotateX(0deg); /* Bring visible span to front */
+}
+
+/* Keyframes for flip animation */
+@keyframes flipAnimation {
+    0% {
+        opacity: 0;
+        transform: rotateX(90deg); /* Start flipped */
+    }
+    50% {
+        opacity: 1;
+        transform: rotateX(0deg); /* Flip to visible */
+    }
+    100% {
+        opacity: 0;
+        transform: rotateX(90deg); /* Flip back */
+    }
+}
+
+.h3 {
+  margin: 0;
+  padding: 10px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  font-family: Roboto;
+  color: #fff;
+  background-color: #460035;
+}
+em {
+  float: left;
+  display: block;
+  margin-right: 5px;
+  font-style: normal;
+}
+.flip-container {
+  position: relative;
+  display: inline-block;
+  width: 527px;
+  height: 40px;
+}
+.flipper {
+  display: block;
+  position: relative;
+  /*top: 14px;*/
+}
+.flip-container.hover .back {
+  -moz-transform: perspective(800px) rotateX(0);
+  -webkit-transform: perspective(800px) rotateX(0);
+  transform: perspective(800px) rotateX(0);
+}
+.flip-container.hover .front {
+  -webkit-transform: perspective(800px) rotateX(-179.9deg);
+  -moz-transform: perspective(800px) rotateX(-179.9deg);
+  transform: perspective(800px) rotateX(-179.9deg);
+}
+.back, .front {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 527px;
+  height: 40px;
+  white-space: nowrap;
+  -webkit-transition: 1.5s ease-in-out;
+  -moz-transition: 1.5s ease-in-out;
+  -ms-transition: 1.5s ease-in-out;
+  -o-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+  /*background-color: red;*/
+}
+.back {
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transform: perspective(800px) rotateX(180deg);
+  -webkit-transform: perspective(800px) rotateX(180deg);
+  transform: perspective(800px) rotateX(180deg);
+}
+.front {
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transform: perspective(800px) rotateX(0deg);
+  -webkit-transform: perspective(800px) rotateX(0deg);
+  transform: perspective(800px) rotateX(0deg);
+  /*background-color: green;*/
+}
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+
+  /* Style for active tab content */
+  .active {
+    display: block;
+  }
+
+  /* Style for tab links */
+  .tablinks {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+
+  .tablink {
+    padding: 10px 20px;
+    background-color: #460035;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+
     </style>
 </head>
 
-<body background image ="C:\Users\DELL\My project (4)\Project-management-system-DBMS\static\logo.jpg">
+<body >
    
     <header>
         <h1>Welcome to manage project</h1>
     </header>
     
    
-        <div class="column">
-            <h2>collabrate with partners</h2>
-            <h3>our website is collabrative</h3>
-        </div>
+    <div class="column">
+        <h2 >collabrate with partners</h2>
+        <h3>our website is collabrative</h3>
+        <span class="flip">
+            <span class="is-visible">increased productivity</span>
+            <span class="is-hidden">improved collaboration</span>
+            <span class="is-hidden">dynamic teams</span>
+            <span class="is-hidden">you</span>
+        </span>
+    </div>
         <div class="column">
             <h2>start a new project</h2>
             <h3>create and maintain projects</h3>
@@ -77,6 +228,50 @@
         </div>
     </div>
     </div>
+    <div id="home" class="tabcontent">
+      <h1>Home</h1>
+      <p>Welcome to our home page.</p>
+    </div>
     
+    <div id="about" class="tabcontent">
+      <h1>About Us</h1>
+      <p>Our goal is to help institutions keep records of all their projects.</p>
+    </div>
+    
+    <div id="contact" class="tabcontent">
+      <h1>Contact Us</h1>
+      <p>Phone: 1234567890</p>
+      <p>Email: example@example.com</p>
+    </div>
+    
+    <div class="tablinks">
+      <button class="tablink" onclick="openOption('home', this)">Home</button>
+      <button class="tablink" onclick="openOption('about', this)">About Us</button>
+      <button class="tablink" onclick="openOption('contact', this)">Contact Us</button>
+    </div>
+    
+    <script>
+    function openOption(tabName, elmnt) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(tabName).style.display = "block";
+        elmnt.style.backgroundColor = "red"; // Change color as desired
+    }
+    
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+    
+
+</script>
+        <script src="home.js"></script>
 </body>
+
 </html>
