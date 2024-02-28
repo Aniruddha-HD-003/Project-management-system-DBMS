@@ -8,7 +8,16 @@ def hello():
 
 @app.route("/signin")
 def signin():
-    return render_template('sign.html')
+    return render_template('sign.html') 
+
+@app.route('/createnew')
+def create():
+    return render_template('createnew.html')
+
+
+@app.route('/info')
+def inform():
+    return render_template('info.html')
 
 if __name__=="__main__":
     app.run(debug=True)
