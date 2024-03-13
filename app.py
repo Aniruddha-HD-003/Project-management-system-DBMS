@@ -21,3 +21,11 @@ def inform():
 
 if __name__=="__main__":
     app.run(debug=True)
+
+
+@app.route('/projecttable')
+def inform():
+    return render_template('projecttable.html')
+
+if __name__=="__main__":
+    app.run(debug=True)
