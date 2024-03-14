@@ -1,28 +1,23 @@
 <div class="tab">
     <button class="tablinks" onclick="openCity(event, 'London')">AIML</button>
-    <button class="tablinks" onclick="openCity(event, 'Paris')">CSE</button>
-    <button class="tablinks" onclick="openCity(event, 'Tokyo')">ISE</button>
+    <button class="tablinks" onclick="openCity(event, 'London')">CSE</button>
+    <button class="tablinks" onclick="openCity(event, 'London')">ISE</button>
     <button class="tablinks" onclick="openCity(event, 'mumbai')">project info</button>
   </div>
   
+  {% for id in did %}
   <div id="London" class="tabcontent">
-    <h3>AIML</h3>
+    <h3>{{id[1]}}</h3>
     <p>here is the info of the projects in aiml department</p>
+    <p>The department id is {{id[0]}}</p>
   </div>
-  
-  <div id="Paris" class="tabcontent">
-    <h3>CSE</h3>
-    <p>here is the info of the projects in cse department.</p>
-  </div>
-  
-  <div id="Tokyo" class="tabcontent">
-    <h3>ISE</h3>
-    <p>here is the info of the projects in ise department</p>
-  </div>
+  {% endfor %}
+
+
   <div id="mumbai" class="tabcontent">
     <h3>Projects</h3>
     <p>here is the info of the projects</p>
-    <a href="/projecttables">click here for more info</a>
+    <a href="/projecttable">click here for more info</a>
   <style>
   /* Style the tab */
   .tab {
