@@ -81,7 +81,8 @@ def depinsert():
 
 @app.route('/departmentdeets')
 def dep():
-    return render_template('departmentdeets.html')
+    did=load_dept_id()
+    return render_template('departmentdeets.html', did=did)
 
 
 

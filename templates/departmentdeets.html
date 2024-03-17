@@ -41,20 +41,16 @@
     <tr>
       <th>Department ID</th>
       <th>Department Name</th>
-      <th>Team details</th>
-      <th>Permissions</th>
-      <th>Email</th>
     </tr>
   </thead>
   <tbody>
     <!-- Empty row with frame -->
+    {% for d in did %}
     <tr>
-      <td style="border: 1px solid #000;"></td>
-      <td style="border: 1px solid #000;"></td>
-      <td style="border: 1px solid #000;"></td>
-      <td style="border: 1px solid #000;"></td>
-      <td style="border: 1px solid #000;"></td>
+      <td style="border: 1px solid #000;">{{d[0]}}</td>
+      <td style="border: 1px solid #000;">{{d[1]}}</td>
     </tr>
+    {% endfor %}
   </tbody>
 </table>
 
