@@ -42,7 +42,7 @@
   <h2>Insert New Element</h2>
   <form id="insertForm">
     <label for="projectID">Project ID:</label>
-    <input type="text" id="projectID" name="projectID" required>
+    <input type="number" id="projectID" name="projectID" required>
 
     <label for="projectName">Project Name:</label>
     <input type="text" id="projectName" name="projectName" required>
@@ -60,8 +60,12 @@
       <option value="Completed">Completed</option>
     </select>
 
-    <label for="teamID">Team ID:</label>
+    <label for="teamID">Department ID:</label>
     <input type="number" id="teamID" name="teamID" required>
+
+    <label for="projectName">Project_Description:</label>
+    <input type="text" id="projectName" name="projectName" required>
+
 
     <button type="submit">Insert Element</button>
   </form>

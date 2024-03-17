@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     return render_template('home.html')
-    
+
 def load_dept_id():
     with engine.connect() as conn:
         result = conn.execute(text("SELECT * FROM Department;"))
@@ -15,6 +15,14 @@ def load_dept_id():
         for i in result:
             did.append(i)
         return did
+
+def load_project():
+    with engine.connect() as conn:
+        result = conn.execute(text("SELECT * FROM Project;"))
+        project = []
+        for i in result:
+            project.append(i)
+        return project
 
 
 @app.route('/info')
@@ -24,7 +32,8 @@ def inform():
 
 @app.route('/projecttable')
 def project():
-    return render_template('projecttable.html')
+    project = load_project()
+    return render_template('projecttable.html', project=project)
 
 @app.route('/task')
 def task():

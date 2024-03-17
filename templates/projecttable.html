@@ -32,7 +32,6 @@
 <h2>Projects Table</h2>
 
 <!-- Table and buttons container -->
-<div class="table-container">
   <table border="1">
     <thead>
       <tr>
@@ -41,24 +40,25 @@
         <th>Start Date</th>
         <th>End Date</th>
         <th>Status</th>
-        <th>Team ID</th>
-        <th>Document ID</th>
+        <th>Department ID</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <!-- Empty row with frame -->
+      {% for p in project %}
       <tr>
-        <td style="border: 1px solid #000;"></td>
-        <td style="border: 1px solid #000;"></td>
-        <td style="border: 1px solid #000;"></td>
-        <td style="border: 1px solid #000;"></td>
-        <td style="border: 1px solid #000;"></td>
-        <td style="border: 1px solid #000;"></td>
-        <td style="border: 1px solid #000;"></td>
+        <td style="border: 1px solid #000;">{{p[0]}}</td>
+        <td style="border: 1px solid #000;">{{p[1]}}</td>
+        <td style="border: 1px solid #000;">{{p[3]}}</td>
+        <td style="border: 1px solid #000;">{{p[4]}}</td>
+        <td style="border: 1px solid #000;">{{p[6]}}</td>
+        <td style="border: 1px solid #000;">{{p[5]}}</td>
+        <td style="border: 1px solid #000;">{{p[2]}}</td>
       </tr>
+      {% endfor %}
     </tbody>
   </table>
-</div>
 
 <!-- Button container -->
 <div class="button-container">
