@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Elements</title>
+<style>
+  /* Style for the form container */
+  .form-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  /* Style for form input fields and button */
+  input[type="text"], input[type="number"], input[type="date"], select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  }
+
+  button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Delete New Element</h2>
+  <form id="insertForm">
+    <label for="projectID">Department ID:</label>
+    <input type="text" id="projectID" name="projectID" required>
+
+    <label for="projectName">Department Name:</label>
+    <input type="text" id="projectName" name="projectName" required>
+
+
+    
+
+    <button type="submit">Delete Element</button>
+  </form>
+</div>
+
+<script>
+  // Function to handle form submission
+  document.getElementById("insertForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    
+    // Get form data
+    const formData = new FormData(event.target);
+    
+    // Create a new table row
+    const newRow = document.createElement("tr");
+
+    // Populate the new row with table data
+    formData.forEach(function(value, key) {
+      const cell = document.createElement("td");
+      cell.textContent = value;
+      newRow.appendChild(cell);
+    });
+
+    // Append the new row to the table body
+    document.querySelector("tbody").appendChild(newRow);
+
+    // Clear the form fields
+    event.target.reset();
+  });
+</script>
+
+</body>
+</html>

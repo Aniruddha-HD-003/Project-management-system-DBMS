@@ -9,19 +9,40 @@
   tbody tr {
     height: 50px; /* Adjust the height as needed */
   }
+
+  /* Style for the button container */
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* Style for the buttons */
+  .button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+
+  .button:hover {
+    background-color: #0056b3;
+  }
 </style>
 </head>
 <body>
 
-<h2>Projects Table</h2>
+<h2>departments Table</h2>
 
 <table border="1">
   <thead>
     <tr>
       <th>Department ID</th>
-      <th>Departemt Name</th>
+      <th>Department Name</th>
       <th>Team details</th>
-      <th>PERMISSIONS</th>
+      <th>Permissions</th>
       <th>Email</th>
     </tr>
   </thead>
@@ -33,10 +54,27 @@
       <td style="border: 1px solid #000;"></td>
       <td style="border: 1px solid #000;"></td>
       <td style="border: 1px solid #000;"></td>
-      
     </tr>
   </tbody>
 </table>
+
+<!-- Button container -->
+<div class="button-container">
+  <button class="button" onclick="insertElements()"><a heref="/depinsert">Insert Elements</a></button>
+  <button class="button" onclick="deleteElements()"><a heref="/deletedep">Delete Elements</a></button>
+</div>
+
+<script>
+  function insertElements() {
+    // Code to insert elements
+    console.log('Insert Elements button clicked');
+  }
+
+  function deleteElements() {
+    // Code to delete elements
+    console.log('Delete Elements button clicked');
+  }
+</script>
 
 </body>
 </html>
