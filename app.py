@@ -34,6 +34,8 @@ def inform():
 def project():
     return render_template('projecttable.html')
 
+
+
 @app.route('/signin2')
 def signin2():
     return render_template('signin.html')

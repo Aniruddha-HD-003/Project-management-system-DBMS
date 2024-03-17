@@ -1,88 +1,122 @@
-<div class="tab">
-    <button class="tablinks" onclick="openCity(event, 'London')">AIML</button>
-    <button class="tablinks" onclick="openCity(event, 'London')">CSE</button>
-    <button class="tablinks" onclick="openCity(event, 'London')">ISE</button>
-    <button class="tablinks" onclick="openCity(event, 'mumbai')">project info</button>
-  </div>
-  
-  {% for id in did %}
-  <div id="London" class="tabcontent">
-    <h3>{{id[1]}}</h3>
-    <p>here is the info of the projects in aiml department</p>
-    <p>The department id is {{id[0]}}</p>
-  </div>
-  {% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects Table</title>
 
+<style>
+/* Styles for the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 300px;
+}
 
-  <div id="mumbai" class="tabcontent">
-    <h3>Projects</h3>
-    <p>here is the info of the projects</p>
-    <a href="/projecttable">click here for more info</a>
-  <style>
-  /* Style the tab */
-  .tab {
-    float: left;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-    width: 30%;
-    height: 300px;
-  }
-  
-  /* Style the buttons that are used to open the tab content */
-  .tab button {
-    display: block;
-    background-color: inherit;
-    color: black;
-    padding: 22px 16px;
-    width: 100%;
-    border: none;
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color: #ddd;
-  }
-  
-  /* Create an active/current "tab button" class */
-  .tab button.active {
-    background-color: #ccc;
-  }
-  
-  /* Style the tab content */
-  .tabcontent {
-    float: left;
-    padding: 0px 12px;
-    border: 1px solid #ccc;
-    width: 70%;
-    border-left: none;
-    height: 300px;
-  }
-  
+/* Styles for the buttons that open the tab content */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Style for the active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Styles for the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
 </style>
 
+</head>
+<body>
+
+<div class="tab">
+  <!-- Buttons for different tabs -->
+  <button class="tablinks" onclick="openCity(event, 'London')">Department Details</button>
+  <button class="tablinks" onclick="openCity(event, 'delhi')">Project Info</button>
+  <button class="tablinks" onclick="openCity(event, 'mumbai')">Team members details</button>
+  <button class="tablinks" onclick="openCity(event, 'nyc')">Team Task details</button>
+  <button class="tablinks" onclick="openCity(event, 'dubai')">Documentation</button>
+</div>
+
+<!-- Content for different tabs -->
+<div id="London" class="tabcontent">
+  <h3>Department Details</h3>
+  <p> for Department details click here</p>
+  <a href="/departmentdeets">Click here </a>
+</div>
+
+<div id="delhi" class="tabcontent">
+  <h3>Project Info</h3>
+  <p> for Project Info click blick here</p>
+  <a href="/projecttable">Click here </a>
+</div>
+
+<div id="mumbai" class="tabcontent">
+  <h3>Team members</h3>
+  <p>To know about team details click here</p>
+  <!-- Add your content here -->
+</div>
+
+<div id="nyc" class="tabcontent">
+  <h3>Team task details</h3>
+  <p> To know more about Team task details click here</p>
+  <!-- Add your content here -->
+</div>
+
+<div id="dubai" class="tabcontent">
+  <h3>Documentation</h3>
+  <p>For details about documentation click here</p>
+  <!-- Add your content here -->
+</div>
+
 <script>
-    function openCity(evt, cityName) {
-  // Declare all variables
+function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
 
-  // Get all elements with class="tabcontent" and hide them
+  // Hide all tab contents
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
 
-  // Get all elements with class="tablinks" and remove the class "active"
+  // Remove "active" class from all tab buttons
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
 
-  // Show the current tab, and add an "active" class to the link that opened the tab
+  // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
 </script>
+
+</body>
+</html>
+
+
+
