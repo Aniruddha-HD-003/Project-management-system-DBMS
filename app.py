@@ -7,15 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     return render_template('home.html')
-
-@app.route("/signin")
-def signin():
-    return render_template('sign.html') 
-
-@app.route('/createnew')
-def create():
-    return render_template('createnew.html')
-
+    
 def load_dept_id():
     with engine.connect() as conn:
         result = conn.execute(text("SELECT * FROM Department;"))
@@ -33,14 +25,6 @@ def inform():
 @app.route('/projecttable')
 def project():
     return render_template('projecttable.html')
-
-@app.route('/uploadoc')
-def uploadoc():
-    return render_template('uploadoc.html')
-
-@app.route('/signin2')
-def signin2():
-    return render_template('signin.html')
 
 @app.route('/task')
 def task():
