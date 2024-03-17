@@ -37,38 +37,39 @@
 </style>
 </head>
 <body>
-
 <div class="form-container">
   <h2>Insert New Element</h2>
-  <form id="insertForm">
+  <form action="/inserttoproj/insert" method="post">
     <label for="projectID">Project ID:</label>
     <input type="number" id="projectID" name="projectID" required>
 
     <label for="projectName">Project Name:</label>
-    <input type="text" id="projectName" name="projectName" required>
+    <input type="text" id="projectName" name="projectName" >
 
     <label for="startDate">Start Date:</label>
-    <input type="date" id="startDate" name="startDate" required>
+    <input type="date" id="startDate" name="startDate" >
 
     <label for="endDate">End Date:</label>
-    <input type="date" id="endDate" name="endDate" required>
+    <input type="date" id="endDate" name="endDate" >
 
     <label for="status">Status:</label>
-    <select id="status" name="status" required>
+    <select id="status" name="status" >
       <option value="Pending">Pending</option>
       <option value="Ongoing">Ongoing</option>
       <option value="Completed">Completed</option>
     </select>
 
     <label for="teamID">Department ID:</label>
-    <input type="number" id="teamID" name="teamID" required>
+    <input type="number" id="teamID" name="teamID" >
 
     <label for="projectName">Project_Description:</label>
-    <input type="text" id="projectName" name="projectName" required>
+    <input type="text" id="projectName" name="projectName" >
 
-
-    <button type="submit">Insert Element</button>
+    <button type="submit">Insert project</button>
+    
+    
   </form>
+
 </div>
 
 <script>

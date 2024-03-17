@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template, jsonify, request
 from database import engine
 from sqlalchemy import text
 
@@ -56,9 +56,14 @@ def teaminsrt():
 def teamdel():
     return render_template('teamdel.html')
 
-@app.route('/inserttoproj')
+@app.route('/projecttable/inserttoproj')
 def inserttoproj():
     return render_template('inserttoproj.html')
+
+@app.route('/inserttoproj/insert', methods=['post'])
+def insert_proj():
+    data = request.form
+    return jsonify(data)
 
 @app.route('/deleteproj')
 def deleteproj():
