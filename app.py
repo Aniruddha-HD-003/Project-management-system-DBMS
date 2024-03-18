@@ -1,5 +1,5 @@
 from flask import Flask,render_template, jsonify, request
-from database import engine
+import database as db
 from sqlalchemy import text
 
 app = Flask(__name__)
@@ -8,31 +8,14 @@ app = Flask(__name__)
 def hello():
     return render_template('home.html')
 
-def load_dept_id():
-    with engine.connect() as conn:
-        result = conn.execute(text("SELECT * FROM Department;"))
-        did = []
-        for i in result:
-            did.append(i)
-        return did
-
-def load_project():
-    with engine.connect() as conn:
-        result = conn.execute(text("SELECT * FROM Project;"))
-        project = []
-        for i in result:
-            project.append(i)
-        return project
-
-
 @app.route('/info')
 def inform():
-    did = load_dept_id()
+    did = db.load_dept_id()
     return render_template('info.html',did = did)
 
 @app.route('/projecttable')
 def project():
-    project = load_project()
+    project = db.load_project()
     return render_template('projecttable.html', project=project)
 
 @app.route('/task')
@@ -63,11 +46,21 @@ def inserttoproj():
 @app.route('/inserttoproj/insert', methods=['post'])
 def insert_proj():
     data = request.form
-    return jsonify(data)
+    projs = dict(data)
+    status=db.add_proj_to_db(projs=projs)
+    return status
 
-@app.route('/deleteproj')
+
+@app.route('/projecttable/deleteproj')
 def deleteproj():
     return render_template('deleteproj.html')
+
+@app.route('/deleteproj/delete', methods=['post'])
+def delete_proj():
+    data = request.form
+    id = (dict(data))['projectID']
+    status = db.remove_from_proj(id)
+    return status
 
 @app.route('/deletedep')
 def deletedep():
