@@ -1,5 +1,6 @@
 INSERT INTO Department VALUES (1,'AIML'),(2,'CSE'),(3,'ISE'),(4,'ECE'),(5,'EEE');
 
+INSERT INTO Admin VALUES('Aniruddhahd@gmail.com','applem2');
 
 INSERT INTO Project VALUES(1,'voice assistant','A voice assistant based on chat gpt api key and speech to text and text to speech model','2023-09-01','2024-05-01',1,'Ongoing');
 INSERT INTO Project VALUES(2,'Stock Market','Prediction of trends in stock market using time series analysis','2023-12-01','2024-05-31',1,'Ongoing');

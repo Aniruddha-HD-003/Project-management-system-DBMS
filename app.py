@@ -1,10 +1,35 @@
 from flask import Flask,render_template, jsonify, request
 import database as db
 
+log_status = 0
+
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
+    return render_template('home.html')
+
+@app.route("/signin")
+def signin():
+    return render_template('signin.html')
+
+@app.route('/signin/sign', methods=['post'])
+def sign():
+    global log_status
+    query = "SELECT * FROM Admin;"
+    admin = db.read_table(query=query)
+    data = request.form
+    entered = dict(data)
+    if entered['user']==admin[0][0] and entered['password']==admin[0][1]:
+        log_status = 1
+        return render_template('home.html')
+    else:
+        return f"Either username or password is incorrect. Please try again!."
+
+@app.route("/signout")
+def signout():
+    global log_status
+    log_status = 0
     return render_template('home.html')
 
 @app.route('/info')
@@ -15,7 +40,10 @@ def inform():
 def dep():
     query = "SELECT * FROM Department;"
     did = db.read_table(query=query)
-    return render_template('departmentdeets.html', did=did)
+    if log_status:
+        return render_template('departmentdeets.html', did=did)
+    else:
+        return render_template('departmentdeetsl.html', did=did)
 
 @app.route('/departmentdeets/depinsert')
 def depinsert():

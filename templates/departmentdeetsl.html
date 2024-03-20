@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include 'bootstrap.html' %}
+<title>Department Table</title>
+<style>
+  /* Add CSS styles for the table rows */
+  tbody tr {
+    height: 50px; /* Adjust the height as needed */
+  }
+
+  /* Style for the button container */
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* Style for the buttons */
+  .button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+
+  .button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<h2>departments Table</h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Department ID</th>
+      <th>Department Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Empty row with frame -->
+    {% for d in did %}
+    <tr>
+      <td style="border: 1px solid #000;">{{d[0]}}</td>
+      <td style="border: 1px solid #000;">{{d[1]}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
