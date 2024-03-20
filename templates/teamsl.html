@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include 'bootstrap.html' %}
+<title>Teams Table</title>
+<style>
+  /* Add CSS styles for the table rows */
+  tbody tr {
+    height: 50px; /* Adjust the height as needed */
+  }
+  
+  /* Style for the button container */
+  .button-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Style for the buttons */
+  .button {
+    margin: 0 10px;
+  }
+</style>
+</head>
+<body>
+
+<h2>Teams Table</h2>
+
+<!-- Table and buttons container -->
+<div class="table-container">
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Team ID</th>
+        <th>team  Name</th>
+        <th>Project ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Empty row with frame -->
+      {% for t in teams %}
+      <tr>
+        <td style="border: 1px solid #000;">{{t[0]}}</td>
+        <td style="border: 1px solid #000;">{{t[1]}}</td>
+        <td style="border: 1px solid #000;">{{t[2]}}</td>
+      {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

@@ -73,7 +73,10 @@ def delete_dept():
 def project():
     query = "SELECT * FROM Project;"
     project = db.read_table(query=query)
-    return render_template('projecttable.html', project=project)
+    if log_status:
+        return render_template('projecttable.html', project=project)
+    else:
+        return render_template('projecttablel.html', project=project)
 
 @app.route('/projecttable/inserttoproj')
 def inserttoproj():
@@ -103,7 +106,10 @@ def delete_proj():
 def teams():
     query = "SELECT * FROM Team;"
     teams = db.read_table(query=query)
-    return render_template('teams.html',teams=teams)
+    if log_status:
+        return render_template('teams.html',teams=teams)
+    else:
+        return render_template('teamsl.html',teams=teams)
 
 @app.route('/teams/teaminsert')
 def teaminsrt():
@@ -133,7 +139,10 @@ def delete_team():
 def teammates():
     query = "SELECT * FROM Team_members;"
     teammate = db.read_table(query=query)
-    return render_template('teammate.html',teammate=teammate)
+    if log_status:
+        return render_template('teammate.html',teammate=teammate)
+    else:
+        return render_template('teammatel.html',teammate=teammate)
 
 @app.route('/teammate/teamminsert')
 def teamminsrt():
@@ -163,7 +172,10 @@ def delete_temmate():
 def task():
     query = "SELECT * FROM Task_assigned;"
     tasks = db.read_table(query=query)
-    return render_template('task.html', tasks=tasks)
+    if log_status:
+        return render_template('task.html', tasks=tasks)
+    else:
+        return render_template('taskl.html', tasks=tasks)
 
 @app.route('/task/taskinsert')
 def taskinsert():
