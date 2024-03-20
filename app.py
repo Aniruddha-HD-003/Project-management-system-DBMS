@@ -47,8 +47,8 @@ def inserttoproj():
 def insert_proj():
     data = request.form
     projs = dict(data)
-    status=db.add_proj_to_db(projs=projs)
-    return status
+    db.add_proj_to_db(projs=projs)
+    return jsonify(data)
 
 
 @app.route('/projecttable/deleteproj')
@@ -59,8 +59,8 @@ def deleteproj():
 def delete_proj():
     data = request.form
     id = (dict(data))['projectID']
-    status = db.remove_from_proj(id)
-    return status
+    db.remove_from_proj(id)
+    return f"Project with id:{id} is removed..."
 
 @app.route('/deletedep')
 def deletedep():
@@ -72,7 +72,7 @@ def depinsert():
 
 @app.route('/departmentdeets')
 def dep():
-    did=load_dept_id()
+    did=db.load_dept_id()
     return render_template('departmentdeets.html', did=did)
 
 
