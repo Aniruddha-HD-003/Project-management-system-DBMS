@@ -71,11 +71,17 @@ def load_task():
 
 def add_proj_to_db(projs):
     query = f"INSERT INTO Project VALUES({int(projs['projectID'])},'{projs['projectName']}','{projs['Description']}','{projs['startDate']}','{projs['endDate']}',{int(projs['deptID'])},'{projs['status']}');"
-    execute_query(query)
+    try:
+        execute_query(query)
+    except Error as e:
+        return f"Error:{e}"
 
 def remove_from_proj(proj_id):
     query = f"DELETE FROM Project WHERE Proj_id={proj_id };"
-    execute_query(query)
+    try:
+        execute_query(query)
+    except Error as e:
+        return f"Error:{e}"
             
 if __name__=='__main__':
     with engine.connect() as conn:

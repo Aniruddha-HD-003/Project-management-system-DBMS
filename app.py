@@ -47,8 +47,9 @@ def inserttoproj():
 def insert_proj():
     data = request.form
     projs = dict(data)
-    db.add_proj_to_db(projs=projs)
-    return jsonify(data)
+    query = f"INSERT INTO Project VALUES({int(projs['projectID'])},'{projs['projectName']}','{projs['Description']}','{projs['startDate']}','{projs['endDate']}',{int(projs['deptID'])},'{projs['status']}');"
+    status=db.execute_query(query=query)
+    return status
 
 
 @app.route('/projecttable/deleteproj')
@@ -59,8 +60,9 @@ def deleteproj():
 def delete_proj():
     data = request.form
     id = (dict(data))['projectID']
-    db.remove_from_proj(id)
-    return f"Project with id:{id} is removed..."
+    query = f"DELETE FROM Project WHERE Proj_id={id};"
+    status=db.execute_query(query=query)
+    return status
 
 @app.route('/deletedep')
 def deletedep():
