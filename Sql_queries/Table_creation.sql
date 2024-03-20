@@ -1,0 +1,9 @@
+CREATE DATABASE Project_manager;
+USE Project_manager;
+
+CREATE TABLE Department(Dept_id INT PRIMARY KEY, Dept_name VARCHAR(50));
+CREATE TABLE Project(Proj_id INT PRIMARY KEY, Name VARCHAR(50),P_Description VARCHAR(1000),Start_date DATE NOT NULL,End_date DATE NOT NULL,Dept_id INT,FOREIGN KEY(Dept_id) REFERENCES Department(Dept_id) ON DELETE SET NULL,Status VARCHAR(20));
+CREATE TABLE Team(Team_id INT PRIMARY KEY,Team_Name VARCHAR(50) NOT NULL,Proj_id INT, FOREIGN KEY(Proj_id) REFERENCES Project(Proj_id) ON DELETE SET NULL); 
+CREATE TABLE Team_members(Team_id INT, FOREIGN KEY(Team_id) REFERENCES Team(Team_id) ON DELETE SET NULL,member_name VARCHAR(50),USN CHAR(10));
+CREATE TABLE Task_assigned(USN CHAR(10),Team_id INT, FOREIGN KEY(Team_id) REFERENCES Team(Team_id) ON DELETE SET NULL, Tasks VARCHAR(1000));
+

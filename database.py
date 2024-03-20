@@ -38,8 +38,3 @@ def execute_query(query,connection=db_conn):
         return f"Error:{e}"
 
             
-if __name__=='__main__':
-    with engine.connect() as conn:
-        result = conn.execute(text("select * from Department;"))
-        for i in result:
-            print(i)
