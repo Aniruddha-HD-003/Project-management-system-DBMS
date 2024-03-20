@@ -71,6 +71,36 @@ def delete_proj():
     status=db.execute_query(query=query)
     return status
 
+@app.route('/teams')
+def teams():
+    query = "SELECT * FROM Team;"
+    teams = db.read_table(query=query)
+    return render_template('teams.html',teams=teams)
+
+@app.route('/teams/teaminsert')
+def teaminsrt():
+    return render_template('teaminsert.html')
+
+@app.route('/teaminsert/insert', methods=['post'])
+def insert_team():
+    data = request.form
+    teams = dict(data)
+    query = f"INSERT INTO Team VALUES({teams['tid']},'{teams['tname']}',{teams['pid']});"
+    status=db.execute_query(query=query)
+    return status
+
+@app.route('/teams/teamdel')
+def teamdel():
+    return render_template('teamdel.html')
+
+@app.route('/teamdel/delete', methods=['post'])
+def delete_team():
+    data = request.form
+    id = (dict(data))['tid']
+    query = f"DELETE FROM Team WHERE Team_id={id};"
+    status=db.execute_query(query=query)
+    return status
+
 @app.route('/task')
 def task():
     return render_template('task.html')
@@ -80,26 +110,6 @@ def taskinsert():
 @app.route('/taskdel')
 def taskdel():
     return render_template('taskdel.html')
-@app.route('/teams')
-def teams():
-    return render_template('teams.html')
-
-@app.route('/teaminsert')
-def teaminsrt():
-    return render_template('teaminsert.html')
-
-@app.route('/teamdel')
-def teamdel():
-    return render_template('teamdel.html')
-
-
-
-
-
-
-
-
-
 
 
 if __name__=="__main__":

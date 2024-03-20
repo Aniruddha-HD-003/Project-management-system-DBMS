@@ -40,15 +40,15 @@
 
 <div class="form-container">
   <h2>Insert New Element</h2>
-  <form id="insertForm">
+  <form action="/teaminsert/insert" method="post">
     <label for="projectID">Team ID:</label>
-    <input type="text" id="projectID" name="projectID" required>
+    <input type="number" id="projectID" name="tid" required>
 
     <label for="projectName">Team Name:</label>
-    <input type="text" id="projectName" name="projectName" required>
+    <input type="text" id="projectName" name="tname" required>
 
-    <label for="startDate">Team member Id:</label>
-    <input type="text" id="startDate" name="startDate" required>
+    <label for="startDate">Project ID:</label>
+    <input type="number" id="startDate" name="pid" required>
 
 
     <button type="submit">Insert Element</button>

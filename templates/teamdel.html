@@ -40,16 +40,9 @@
 
 <div class="form-container">
   <h2>Delete New Element</h2>
-  <form id="insertForm">
+  <form action="/teamdel/delete" method="post">
     <label for="projectID">Team ID:</label>
-    <input type="text" id="projectID" name="projectID" required>
-
-    <label for="projectName">Team Name:</label>
-    <input type="text" id="projectName" name="projectName" required>
-
-
-    
-
+    <input type="number" id="projectID" name="tid" required>
     <button type="submit">Delete Element</button>
   </form>
 </div>

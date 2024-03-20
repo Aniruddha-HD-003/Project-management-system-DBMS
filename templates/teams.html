@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% include 'bootstrap.html' %}
 <title>Projects Table</title>
 <style>
   /* Add CSS styles for the table rows */
@@ -38,16 +36,17 @@
       <tr>
         <th>Team ID</th>
         <th>team  Name</th>
-        <th>Team member Id</th>
+        <th>Project ID</th>
       </tr>
     </thead>
     <tbody>
       <!-- Empty row with frame -->
+      {% for t in teams %}
       <tr>
-        <td style="border: 1px solid #000;"></td>
-        <td style="border: 1px solid #000;"></td>
-        <td style="border: 1px solid #000;"></td>
-        
+        <td style="border: 1px solid #000;">{{t[0]}}</td>
+        <td style="border: 1px solid #000;">{{t[1]}}</td>
+        <td style="border: 1px solid #000;">{{t[2]}}</td>
+      {% endfor %}
       </tr>
     </tbody>
   </table>
@@ -55,8 +54,8 @@
 
 <!-- Button container -->
 <div class="button-container">
-  <button type="button" class="btn btn-outline-primary"><a href="/teaminsert">INSERT ELEMENTS</a></button>
-  <button type="button" class="btn btn-outline-primary"><a href="/teamdel">DELETE ELEMENTS</a></button>
+  <button type="button" class="btn btn-outline-primary"><a href="/teams/teaminsert">INSERT ELEMENTS</a></button>
+  <button type="button" class="btn btn-outline-primary"><a href="/teams/teamdel">DELETE ELEMENTS</a></button>
 </div>
 
 </body>
