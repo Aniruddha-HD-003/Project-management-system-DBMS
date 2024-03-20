@@ -1,6 +1,5 @@
 from flask import Flask,render_template, jsonify, request
 import database as db
-from sqlalchemy import text
 
 app = Flask(__name__)
 
@@ -10,12 +9,12 @@ def hello():
 
 @app.route('/info')
 def inform():
-    did = db.load_dept_id()
-    return render_template('info.html',did = did)
+    return render_template('info.html')
 
 @app.route('/projecttable')
 def project():
-    project = db.load_project()
+    query = "SELECT * FROM Project;"
+    project = db.read_table(query=query)
     return render_template('projecttable.html', project=project)
 
 @app.route('/task')
@@ -74,7 +73,8 @@ def depinsert():
 
 @app.route('/departmentdeets')
 def dep():
-    did=db.load_dept_id()
+    query = "SELECT * FROM Department;"
+    did = db.read_table(query=query)
     return render_template('departmentdeets.html', did=did)
 
 
