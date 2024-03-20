@@ -101,6 +101,36 @@ def delete_team():
     status=db.execute_query(query=query)
     return status
 
+@app.route('/teammate')
+def teammates():
+    query = "SELECT * FROM Team_members;"
+    teammate = db.read_table(query=query)
+    return render_template('teammate.html',teammate=teammate)
+
+@app.route('/teammate/teamminsert')
+def teamminsrt():
+    return render_template('teamminsert.html')
+
+@app.route('/teamminsert/insert', methods=['post'])
+def insert_teammate():
+    data = request.form
+    teammates = dict(data)
+    query = f"INSERT INTO Team_members VALUES({teammates['tid']},'{teammates['mname']}','{teammates['usn']}');"
+    status=db.execute_query(query=query)
+    return status
+
+@app.route('/teammate/teammdel')
+def teammdel():
+    return render_template('teammdel.html')
+
+@app.route('/teammdel/delete', methods=['post'])
+def delete_temmate():
+    data = request.form
+    usn = (dict(data))['usn']
+    query = f"DELETE FROM Team_members WHERE USN='{usn}';"
+    status=db.execute_query(query=query)
+    return status
+
 @app.route('/task')
 def task():
     query = "SELECT * FROM Task_assigned;"
