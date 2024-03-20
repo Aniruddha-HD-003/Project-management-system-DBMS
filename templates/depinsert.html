@@ -40,21 +40,12 @@
 
 <div class="form-container">
   <h2>Insert New Element</h2>
-  <form id="insertForm">
-    <label for="projectID">Department ID:</label>
-    <input type="text" id="projectID" name="projectID" required>
+  <form action="/depinsert/insert" method="post">
+    <label for="deptID">Department ID:</label>
+    <input type="text" id="projectID" name="deptID" required>
 
-    <label for="projectName">Department Name:</label>
-    <input type="text" id="projectName" name="projectName" required>
-
-    <label for="teamID">Team details:</label>
-    <input type="number" id="teamID" name="teamID" required>
-
-    <label for="permissions">Permissions:</label>
-    <input type="text" id="permissions" name="permissions" required>
-
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="email" required>
+    <label for="deptName">Department Name:</label>
+    <input type="text" id="projectID" name="deptName" required>
 
     <button type="submit">Insert Element</button>
   </form>

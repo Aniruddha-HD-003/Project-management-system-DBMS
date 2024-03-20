@@ -2,7 +2,7 @@ INSERT INTO Department VALUES (1,'AIML'),(2,'CSE'),(3,'ISE'),(4,'ECE'),(5,'EEE')
 
 
 INSERT INTO Project VALUES(1,'voice assistant','A voice assistant based on chat gpt api key and speech to text and text to speech model','2023-09-01','2024-05-01',1,'Ongoing');
-INSERT INTO Project VALUES(2,'Stock Market','Prediction of trends in stock market using time series analysis','2023-12-01','2024-05-31',2,'Ongoing');
+INSERT INTO Project VALUES(2,'Stock Market','Prediction of trends in stock market using time series analysis','2023-12-01','2024-05-31',1,'Ongoing');
 INSERT INTO Project VALUES(3,'Large language modle','A LLM for analysing pdf','2024-05-01','2024-08-15',2,'Planned');
 INSERT INTO Project VALUES(4,'pulse analyser','It analyses the pulse and generate the report','2023-01-15','2023-08-15',4,'Complected');
 INSERT INTO Project VALUES(5,'AI Attendence','A computer vision algorithm which takes the attendence of the students based on face recognition','2024-04-20','2024-08-13',3,'Planned');

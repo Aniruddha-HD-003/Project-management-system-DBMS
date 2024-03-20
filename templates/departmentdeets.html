@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% include 'bootstrap.html' %}
 <title>Projects Table</title>
 <style>
   /* Add CSS styles for the table rows */
@@ -54,23 +53,8 @@
   </tbody>
 </table>
 
-<!-- Button container -->
 <div class="button-container">
-  <button class="button" onclick="insertElements()"><a heref="/depinsert">Insert Elements</a></button>
-  <button class="button" onclick="deleteElements()"><a heref="/deletedep">Delete Elements</a></button>
+  <button type="button" class="btn btn-outline-primary"><a href="/departmentdeets/depinsert">INSERT ELEMENTS</a></button>
+  <button type="button" class="btn btn-outline-primary"><a href="/departmentdeets/deletedep">DELETE ELEMENTS</a></button>
 </div>
 
-<script>
-  function insertElements() {
-    // Code to insert elements
-    console.log('Insert Elements button clicked');
-  }
-
-  function deleteElements() {
-    // Code to delete elements
-    console.log('Delete Elements button clicked');
-  }
-</script>
-
-</body>
-</html>
