@@ -35,30 +35,28 @@
   <table border="1">
     <thead>
       <tr>
-        <th>task ID</th>
-        <th>task   Name</th>
-        <th>Description</th>
-        <th>team member Id</th>
-
+        <th>USN</th>
+        <th>Team ID</th>
+        <th>Tasks</th>
       </tr>
     </thead>
     <tbody>
       <!-- Empty row with frame -->
+      {% for t in tasks%}
       <tr>
-        <td style="border: 1px solid #000;"></td>
-        <td style="border: 1px solid #000;"></td>
-        <td style="border: 1px solid #000;"></td>
-        <td style="border: 1px solid #000;"></td>
-        
+        <td style="border: 1px solid #000;">{{t[0]}}</td>
+        <td style="border: 1px solid #000;">{{t[1]}}</td>
+        <td style="border: 1px solid #000;">{{t[2]}}</td> 
       </tr>
+      {% endfor %}
     </tbody>
   </table>
 </div>
 
 <!-- Button container -->
 <div class="button-container">
-  <button type="button" class="btn btn-outline-primary"><a href="/taskinsert">INSERT ELEMENTS</a></button>
-  <button type="button" class="btn btn-outline-primary"><a href="/taskdel">DELETE ELEMENTS</a></button>
+  <button type="button" class="btn btn-outline-primary"><a href="/task/taskinsert">INSERT ELEMENTS</a></button>
+  <button type="button" class="btn btn-outline-primary"><a href="/task/taskdel">DELETE ELEMENTS</a></button>
 </div>
 
 </body>

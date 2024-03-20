@@ -103,13 +103,33 @@ def delete_team():
 
 @app.route('/task')
 def task():
-    return render_template('task.html')
-@app.route('/taskinsert')
+    query = "SELECT * FROM Task_assigned;"
+    tasks = db.read_table(query=query)
+    return render_template('task.html', tasks=tasks)
+
+@app.route('/task/taskinsert')
 def taskinsert():
     return render_template('taskinsert.html')
-@app.route('/taskdel')
+
+@app.route('/taskinsert/insert', methods=['post'])
+def insert_task():
+    data = request.form
+    tasks = dict(data)
+    query = f"INSERT INTO Task_assigned VALUES('{tasks['usn']}',{tasks['tid']},'{tasks['task']}');"
+    status=db.execute_query(query=query)
+    return status
+
+@app.route('/task/taskdel')
 def taskdel():
     return render_template('taskdel.html')
+
+@app.route('/taskdel/delete', methods=['post'])
+def delete_task():
+    data = request.form
+    usn = (dict(data))['usn']
+    query = f"DELETE FROM Task_assigned WHERE USN='{usn}';"
+    status=db.execute_query(query=query)
+    return status
 
 
 if __name__=="__main__":

@@ -40,17 +40,16 @@
 
 <div class="form-container">
   <h2>Insert New Element</h2>
-  <form id="insertForm">
-    <label for="projectID">Task ID:</label>
-    <input type="text" id="projectID" name="projectID" required>
+  <form action="/taskinsert/insert" method="post">
+    <label for="projectID">USN:</label>
+    <input type="text" id="projectID" name="usn" required>
 
-    <label for="projectName">Task Name:</label>
-    <input type="text" id="projectName" name="projectName" required>
+    <label for="projectID">Team_id:</label>
+    <input type="number" id="projectID" name="tid" required>
 
-    <label for="startDate">description</label>
-    <input type="text" id="startDate" name="startDate" required>
-    <label for="projectName">Team member Id:</label>
-    <input type="text" id="projectName" name="projectName" required>
+    <label for="projectName">Task:</label>
+    <input type="text" id="projectName" name="task" required>
+
 
 
     <button type="submit">Insert Element</button>

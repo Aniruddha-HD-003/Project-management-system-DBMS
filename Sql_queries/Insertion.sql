@@ -14,15 +14,15 @@ INSERT INTO Project VALUES(10,'EV Battery','A EV battery which charges quickly a
 
 
 INSERT INTO Team VALUES (1,'Eagles',1);
-INSERT INTO Team VALUES (2,'Tigers',1);
-INSERT INTO Team VALUES (3,'Cheetas',2);
-INSERT INTO Team VALUES (4,'Lions',2);
-INSERT INTO Team VALUES (5,'Elephants',3);
-INSERT INTO Team VALUES (6,'Aligators',3);
-INSERT INTO Team VALUES (7,'Whales',4);
-INSERT INTO Team VALUES (8,'Sharks',4);
-INSERT INTO Team VALUES (9,'Dolphins',5);
-INSERT INTO Team VALUES (10,'Panthers',5);
+INSERT INTO Team VALUES (2,'Tigers',2);
+INSERT INTO Team VALUES (3,'Cheetas',3);
+INSERT INTO Team VALUES (4,'Lions',4);
+INSERT INTO Team VALUES (5,'Elephants',5);
+INSERT INTO Team VALUES (6,'Aligators',6);
+INSERT INTO Team VALUES (7,'Whales',7);
+INSERT INTO Team VALUES (8,'Sharks',8);
+INSERT INTO Team VALUES (9,'Dolphins',9);
+INSERT INTO Team VALUES (10,'Panthers',10);
 
 
 INSERT INTO Team_members VALUES(1,'Aniruddha','AI004');
